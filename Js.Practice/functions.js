@@ -1,106 +1,125 @@
-//  Write a JavaScript function to get the number of days in a month ................!!!!
+// FUNCTIONS WITH OR WITHOUT ARGUMENTS
 
-// function getDaysInMonth(month, year) {
-//     var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-//     if (months[month - 1] == months[1]) {
-//         if (year % 4 == 0) {
-//             if (year % 100 == 0) {
-//                 if (year % 400 == 0) {
-//                     console.log(months[month - 1] + 1);
-//                     return 0;
-//                 }
-//                 console.log(months[month - 1]);
-//                 return 0;
-//             }
-//             console.log(months[month - 1] + 1);
-//         }
-//         else { console.log(months[month - 1]); return 0; }
-//     }
-//     else
-//     console.log(months[month - 1]);
-// }
+// find whether the give number even 
 
-// getDaysInMonth(2, 2100);
+function isEven(even) {
+    if (even % 2 == 0)
+        console.log('The given Number :' + even + " " + 'is even number');
+    if (even % 2 == 1)
+        console.log('The given Number :' + even + " " + 'is not even number');
+}
+isEven(9)
 
-// function getDaysInMonth(month, year) {
+// Print all even numbers upto n
 
-//     // here JANUARY IS BASED ON 1
-//     //  0 represents the last day in the previous month
-
-//     console.log(new Date(year, month, 0).getDate());
-
-//     // Here January is 0 based
-//     // return new Date(year, month+1, 0).getDate();
-// }
-
-// getDaysInMonth(1, 2014)
-
-//  Write a JavaScript function to get the month name from a particular date ..............!!!!
-
-// function month_name(dateString) {
-//     var monthNames = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-//     console.log(monthNames[new Date(dateString).getMonth()])
-// }
-
-// month_name('10/11/2009')
-// month_name('11/13/2014')
-// month_name('12/11/2009')
-
-
-//Write a JavaScript function to compare dates (i.e. greater than, less than or equal to)
-
-
-// function dateCompare(datestr1, datestr2) {
-//     var date1 = new Date(datestr1);
-//     var date2 = new Date(datestr2);
-
-//     if (date1 > date2) {
-//         console.log(" date1 > date2 ")
-//         //return " date1 > date2 " 
-//     }
-//     else if (date1 < date2) {
-//         console.log("date2 > date1")
-//         //return "date2 > date1"
-//     }
-//     else {
-//         console.log("date1 = date2")
-//         //return "date1 = date2" 
-//     }
-// }
-// dateCompare("2013-11-14T00:00" , "2013-11-14T00:01");
-//dateCompare("11/14/2013 00:01","11/14/2013 00:00");
-//dateCompare("11/14/2013 00:01:58","11/14/2013 00:01:55");
-//console.log(dateCompare(new Date("11/14/2013 00:01"),new Date("11/14/2013 00:00")));
-//console.log(dateCompare(new Date("11/14/2013 00:00"),new Date("11/14/2013 00:01")));
-
-
-//Write a JavaScript function to add specified minutes to a Date object.
-
-// function setminutes(date, minutes){
-
-//     var d = new Date(date).setMinutes(minutes);
-
-//     console.log (new Date(d).toString());
-
-// }
-// setminutes('2014/11/02', 50)
-
-
-// Write a JavaScript function to test whether a date is a weekend.
-
-function is_weekend(date){
-    var d = new Date(date).getDay();
-     if (d == 0 ){
-        console.log('Weekend');
-     }
-     if ( d == 6){
-        console.log('Weekend');
-    }
-     else {
-         console.log('undefined');
+function even(n) {
+    for (var i = 0; i <= n; i++) {
+        if (i % 2 == 0)
+            console.log(i);
     }
 }
-is_weekend('2014/11/15');
-is_weekend('2014/11/16');
-is_weekend('2014/11/17');
+even(13)
+
+// Print all even numbers upto n in Reverse order
+
+function evenReverse(n) {
+    for (var i = n; i >= 0; i--) {
+        if (i % 2 == 0)
+            console.log(i);
+    }
+}
+evenReverse(10)
+
+// Print sum of even numbers upto n
+
+function evenSum(n) {
+    var sum = 0;
+    for (var i = 0; i <= n; i++) {
+        if (i % 2 == 0) {
+            sum += i;
+
+        }
+    }
+    console.log(sum)
+}
+evenSum(6)
+
+// Print sum of odd numbers upto n
+
+function oddSum(n) {
+    var sum = 0;
+    for (var i = 0; i <= n; i++) {
+        if (i % 2 == 1) {
+            sum += i;
+
+        }
+    }
+    console.log(sum)
+}
+oddSum(5)
+
+// Print factorial of a given  number
+
+function factorial(n) {
+    var facto = 1;
+    for (var i = n; i >= 1; i--) {
+        facto *= i;
+    }
+    console.log(facto);
+}
+factorial(5)
+
+// Print the Position of employee based on his Salary
+
+var employee = {
+    'id' : 1001,
+    "name" : "siva",
+    "grade" : 'A',
+    "salary" : 0,
+    "position" : function(salary){
+        if ( salary < 20000){
+            this.salary = salary;
+            return "Engineer" +': '+ 'The salary is' + ' ' + this.salary;
+        }
+        if (salary >= 20000 && salary <= 40000){
+            this.salary = salary;
+            return "Senior Manager"+': '+ 'The salary is' + ' ' + this.salary;
+        }
+        if ( salary > 40000){
+            this.salary = salary;
+            return "Executive" +': ' + 'The salary is' + ' ' + this.salary;
+        }
+
+    }
+} 
+console.log(employee.position(9000))
+
+
+// Print the total marks of every Student
+
+
+
+function stuedentTotal(studentName){
+    var std = [{"id": 1001,"name" : "siva","m1" : 100,"m2":80,"m3":90,"m4":70,"m5":110,"m6":95,"total":0},
+    {"id": 1002,"name" : "siva","m1" : 100,"m2":80,"m3":90,"m4":89,"m5":110,"m6":95,"total":0},
+    {"id": 1003,"name" : "Raju","m1" : 80,"m2":80,"m3":90,"m4":70,"m5":110,"m6":95,"total":0},
+    {"id": 1004,"name" : "Phani","m1" : 90,"m2":90,"m3":100,"m4":100,"m5":105,"m6":95,"total":0},
+    {"id": 1005,"name" : "Jai","m1" : 100,"m2":80,"m3":90,"m4":70,"m5":110,"m6":96,"total":0},
+    {"id": 1006,"name" : "Dora","m1" : 100,"m2":60,"m3":80,"m4":89,"m5":100,"m6":95,"total":0},
+    {"id": 1007,"name" : "Sanjay","m1" : 80,"m2":80,"m3":90,"m4":70,"m5":101,"m6":98,"total":0},
+    {"id": 1008,"name" : "Karthik","m1" : 100,"m2":80,"m3":95,"m4":88,"m5":110,"m6":95,"total":0},
+    {"id": 1009,"name" : "Venky","m1" : 120,"m2":90,"m3":90,"m4":70,"m5":110,"m6":95,"total":0},
+    {"id": 1010,"name" : "Vamsi","m1" : 100,"m2":80,"m3":80,"m4":46,"m5":100,"m6":92,"total":0}]
+
+    // var student = std.filter(function(val, ind){
+    //     var tot = val.m1 + val.m2 + val.m3;
+    //     val.total = tot;
+    //     return (val.name == studentName)
+    // })
+    // console.log(student[0].name + ' '+ 'total Marks are'+ " "+ student[0].total);
+    std.forEach(function(val,ind){
+        val.total = val.m1+val.m2+val.m3+val.m4+val.m5+val.m6;
+        console.log("StudentName :"+ " "+val.name +" " + "Total Marks are :" +" "+ val.total);
+    })
+}
+stuedentTotal()
