@@ -1,0 +1,16 @@
+body{
+    background: #f1f1f1;
+}
+.page-body{
+    margin-top: 72px;
+}
+.content-body{
+    margin-right:0;
+}
+.list-group a , i {
+    font-size :1.5rem;
+}
+.list-group>a:hover{
+    background:grey;
+    color:black;
+}

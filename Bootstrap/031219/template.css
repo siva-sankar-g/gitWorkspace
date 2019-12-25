@@ -1,0 +1,55 @@
+.aside-nav{
+    width:20%;
+    height:100%;
+    position:fixed;
+    display:block;
+}
+.body{
+    width:80%;
+    height:100%;
+    background: #f1f1f1;
+    margin-right:0px;
+     
+}
+.header{
+    position:fixed;
+    top: 0;
+    display:block;
+    width:100%;
+    z-index: 1;
+}
+.page{
+    margin-top:72px;
+}
+.space1{
+    margin-right:10px;
+    font-size:25px;
+}
+.list-group{
+    font-size:20px;
+}
+.recent-users span{
+    font-size:1.4rem;
+}
+.pont{
+    font-size:1.8rem; 
+}
+
+.list-group>a:hover{
+    background:lightgrey;
+    text-decoration:none;
+    color:black;
+}
+.card div{
+    font-size:1.4rem;
+}
+.col-md-4 img{
+    width:480px;
+    height:350px;
+}
+table tr:nth-child(even){
+    background:white;
+}
+table tr:hover{
+    background:grey;
+}
