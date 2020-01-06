@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Table Hide and Display</title>
+</head>
+
+<body>
+    <div class="container bg-secondary  py-5 mt-5 ">
+        <div class="form-group text-right ">
+            <button onclick="show()"class="btn btn-danger btn-lg mr-4">Show</button>
+            <button onclick="hide()"class="btn btn-warning btn-lg">Hide</button>
+        </div>
+        <table class="table table-borderless" id="table">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>S.No</th>
+                    <th>S.Id</th>
+                    <th>M1</th>
+                    <th>M2</th>
+                    <th>M3</th>
+                    <th>M4</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody class="text-white text-center">
+                <tr>
+                    <td>1</td>
+                    <td>1001</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>1200</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1002</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1003</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>900</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1004</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>1005</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>1100</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function show(){
+            var show = document.getElementById('table');
+            show.classList.remove('d-none')
+        }
+        function hide(){
+            var show = document.getElementById('table');
+            show.classList.add('d-none')
+        }
+    </script>
+</body>
+
+</html>
