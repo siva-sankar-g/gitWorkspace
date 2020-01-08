@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>FormValidation</title>
+</head>
+
+<body>
+    <div class="container p-5 bg-light">
+        <div class="bg-danger p-2 text-white text-center position-relative d-none" id="close">
+            <h4>Enter Valid UserName or Password</h4>
+            <button class=" btn btn-link text-decoration-none text-white position-absolute px-3"
+                style="top:0px;right:0px">X</button>
+        </div>
+
+
+        <div class="card px-3 w-50 mx-auto py-4 mt-5">
+            <h2 class="text-center">Login Form</h2>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" onkeyup="validateup()" id='username'
+                    placeholder="enterYourUserName" autocomplete="off" />
+                <small id="showuser" class="text-danger d-none">enterUserName</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" onkeyup="validateup()" class="form-control" id='password'
+                    placeholder="enterYourPassword" autocomplete="off" />
+                <small id="showpassword" class="text-danger d-none">enterPassword</small>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info" onclick="validdateform()">Submit</button>
+                <button class="btn btn-danger" onclick="resetform()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function validdateform() {
+            var user = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // if (user == "" || password == "") {
+            //     document.getElementById('close').classList.remove('d-none')
+            // }
+
+            if (user == "") {
+                document.getElementById('showuser').classList.remove('d-none')
+            }
+            if (password == "") {
+                document.getElementById('showpassword').classList.remove('d-none')
+            }
+        }
+        function validateup() {
+            var user = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (user != "") {
+                document.getElementById('showuser').classList.add('d-none')
+            }
+            if (password != "") {
+                document.getElementById('showpassword').classList.add('d-none')
+            }
+        }
+        function resetform() {
+            document.getElementById('username').value = "";
+            document.getElementById('password').value = "";
+            document.getElementById('showpassword').classList.add('d-none')
+            document.getElementById('showuser').classList.add('d-none')
+
+        }
+        // function close1() {
+        //     document.getElementById('close').classList.add('d-none')
+        // }
+    </script>
+</body>
+
+</html>
