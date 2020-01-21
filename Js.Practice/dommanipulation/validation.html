@@ -19,32 +19,35 @@
         </div>
 
 
-        <div class="card px-3 w-50 mx-auto py-4 mt-5">
-            <h2 class="text-center">Login Form</h2>
+        <div class="card px-3 w-50 mx-auto py-4 mt-5" id='sankar'>
+            <h2 class="text-center" id="siva">Login Form</h2>
             <div class="form-group">
                 <label for="username">User Name</label>
-                <input type="text" class="form-control" onkeyup="validateup()" id='username'
+                <input type="text" class="form-control" onkeyup="validateup1()" id='username'
                     placeholder="enterYourUserName" autocomplete="off" />
                 <small id="showuser" class="text-danger d-none">enterUserName</small>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" onkeyup="validateup()" class="form-control" id='password'
+                <input type="text" onkeyup="validateup2()" class="form-control" id='password'
                     placeholder="enterYourPassword" autocomplete="off" />
                 <small id="showpassword" class="text-danger d-none">enterPassword</small>
             </div>
             <div class="form-group">
-                <button class="btn btn-info" onclick="validdateform()">Submit</button>
-                <button class="btn btn-danger" onclick="resetform()">Reset</button>
+                <button class="btn btn-info" id="submitbutton">Submit</button>
+                <button class="btn btn-danger" id="resetbutton">Reset</button>
             </div>
         </div>
     </div>
-
     <script>
 
-        function validdateform() {
-            var user = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
+        document.getElementById('submitbutton').onclick = validateform
+        document.getElementById('resetbutton').onclick = resetform
+
+        var user = document.getElementById('username').value.trim();
+        var password = document.getElementById('password').value.trim();
+
+        function validateform() {
 
             // if (user == "" || password == "") {
             //     document.getElementById('close').classList.remove('d-none')
@@ -57,14 +60,22 @@
                 document.getElementById('showpassword').classList.remove('d-none')
             }
         }
-        function validateup() {
-            var user = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            if (user != "") {
+        function validateup1() {
+
+            if (user != " ") {
                 document.getElementById('showuser').classList.add('d-none')
             }
-            if (password != "") {
+            if(user == "") {
+                document.getElementById('showuser').classList.remove('d-none')
+            }
+        }
+        function validateup2(){
+
+            if (password != " ") {
                 document.getElementById('showpassword').classList.add('d-none')
+            }
+            if(password == " ") {
+                document.getElementById('showpassword').classList.remove('d-none')
             }
         }
         function resetform() {
@@ -72,7 +83,6 @@
             document.getElementById('password').value = "";
             document.getElementById('showpassword').classList.add('d-none')
             document.getElementById('showuser').classList.add('d-none')
-
         }
         // function close1() {
         //     document.getElementById('close').classList.add('d-none')
