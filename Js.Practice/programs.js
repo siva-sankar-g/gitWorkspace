@@ -36,6 +36,8 @@ while (length--) {
 }
 console.log(max_number)
 
+// pyramid display
+
 function pyramid(forward, reverse){
  
 for ( var i = 1; i <= forward; i++){
